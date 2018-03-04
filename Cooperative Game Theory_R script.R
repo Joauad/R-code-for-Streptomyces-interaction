@@ -1,0 +1,36 @@
+### TRANSFERABLE UTILITY
+
+## 3 PLAYER SHAPLEY VALUE
+
+# Begin defining the game
+
+COALITIONS <- c(46125,17437.5,5812.5,69187.5,53812.5,30750,90000)
+LEMAIRE<-DefineGame(3,COALITIONS)
+summary(LEMAIRE)
+
+# End defining the game
+
+NAMES <- c("Investor 1","Investor 2","Investor 3")
+LEMAIRESHAPLEY <- ShapleyValue(LEMAIRE,NAMES)
+summary(LEMAIRESHAPLEY)
+
+# 3 PLAYER NUCLEOLUS OF A GAINS GAME 
+
+LEMAIRENUCLEOLUS<-Nucleolus(LEMAIRE)
+summary(LEMAIRENUCLEOLUS)
+
+
+# 4 PLAYER SHAPLEY VALUE
+
+COALITIONS <- c(26,27,55,57,53,81,83,82,84,110,108,110,110,110,110)
+AIR<-DefineGame(4,COALITIONS)
+
+NAMES <- c("Airline 1","Airline 2","Airline 3","Airline 4")
+AIRSHAPLEY<-ShapleyValue(AIR,NAMES)
+summary(AIRSHAPLEY)
+
+# 4 PLAYER NUCLEOLUS OF A COST GAME 
+
+AIRNUCLEOLUS<-Nucleolus(AIR,type="Cost")
+summary(AIRNUCLEOLUS)
+
